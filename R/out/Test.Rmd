@@ -1,0 +1,207 @@
+---
+title: "Network sampling"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r import}
+require(data.table)
+require(ggplot2)
+require(viridis)
+```
+## Gene expression data p-values
+```{r gene_expression}
+pvals_raw<-fread("/home/anne/Documents/Master/MA/code/keypathwayminer-standalone/src/main/resources/huntington-gene-expression-DOWN.txt", header=T, sep="\t")
+
+pvals<-as.data.table(unlist(pvals_raw[,2:ncol(pvals_raw)]))
+colnames(pvals)<-c("Pvalue")
+
+gpl<-ggplot(pvals, aes(x=Pvalue))+geom_histogram()+
+  labs(x="P-value")+ggtitle("Histogram of p-values in original data")
+plot(gpl)
+
+#pvals_raw[,Mean:=lapply(.SD,mean), by = ID]
+pvals_raw[,median:=lapply(.SD,median), by = ID]
+#pvals_clean<-pvals_raw[which(pvals_raw$Mean!=1.0)]
+pvals_clean<-pvals_raw[which(pvals_raw$median!=1.0)]
+write.table(pvals_clean[,1:(ncol(pvals_clean)-1)], "/home/anne/Documents/Master/MA/code/keypathwayminer-standalone/src/main/resources/huntington_no1.csv", sep = "\t", row.names = F, quote = F)
+
+pvals_clean2<-data.table(pval = unlist(pvals_clean[,2:(ncol(pvals_clean)-1)]))
+gpl2<-ggplot(pvals_clean2, aes(x=pval))+geom_histogram()+
+  labs(x="P-value")+ggtitle("Histogram of p-values in original data with samples with median \n pval = 1 removed")
+plot(gpl2)
+
+#pg<-ggplot(pvals_clean, aes(x=Mean))+geom_histogram()
+#plot(gp)
+pg<-ggplot(pvals_clean, aes(x=median))+geom_histogram()+ggtitle("Histogram using Median")
+plot(pg)
+
+```
+
+# Sampled Network node distribution
+## Pooled over all samples of one size (all)
+```{r nodeDist}
+file <- fread("/home/anne/Documents/Master/MA/Testing/out/nodeDist/nodeDistTall2.txt", fill = T)
+
+#fall<-as.data.table(t(file))
+file$run<-row.names(file)
+fall<-melt(file, id.vars =  c("V1", "run"))
+fall<-fall[,c("V1", "run", "value")]
+fall<-fall[!is.na(fall$value)]
+
+ggplot(fall[V1 %in% c("10", "15", "20", "30", "50", "96")], aes(x=value))+geom_histogram()+facet_wrap(c("V1"))+ ggtitle("Node degree distribution pooled over runs")
+```
+
+## By sample (exemplary)
+
+```{r cars}
+ggplot(fall[ V1== 96 & run %in% c(1:10)], aes(x=value))+geom_histogram()+facet_wrap(c("V1", "run"))+ ggtitle("Node degree distributions for individual networks of size 96")
+```
+
+```{r cars2}
+ggplot(fall[ V1==46 & run %in% c(10001:10010)], aes(x=value))+geom_histogram()+facet_wrap(c("V1", "run"))+ ggtitle("Node degree distributions for individual networks of size 46")
+```
+
+## Pooled over all samples of one size (reduced)
+```{r nodeDist2}
+file <- fread("/home/anne/Documents/Master/MA/Testing/out/nodeDist/nodeDistT2.txt", fill = T)
+
+#fall<-as.data.table(t(file))
+file$run<-row.names(file)
+fall<-melt(file, id.vars =  c("V1", "run"))
+fall<-fall[,c("V1", "run", "value")]
+fall<-fall[!is.na(fall$value)]
+
+ggplot(fall[V1 %in% c("10", "15", "20", "30", "50", "96")], aes(x=value))+geom_histogram()+facet_wrap(c("V1"))+ ggtitle("Node degree distribution pooled over runs")
+```
+# Sampled network p-value distribution
+## removed mean = 1, sampled from uniform distribution for missing nodes
+```{r pressure1, echo=FALSE}
+teststats<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionT.txt", header= FALSE, sep = "\t")
+teststats<-as.data.table(t(teststats))[2:ncol(teststats),]
+teststats<-melt(teststats)
+colnames(teststats)<-c("NetworkSize", "Pval")
+
+gp<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)
+p<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)
+
+#+ theme(legend.position="none")
+#plot(gp)
+#plot(p)  
+
+teststatsF<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionT.txt", header= FALSE, sep = "\t")
+teststatsF<-as.data.table(t(teststatsF))[2:ncol(teststatsF),]
+teststatsF<-melt(teststatsF)
+colnames(teststatsF)<-c("NetworkSize", "Pval")
+
+gpF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+pF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+
+#+ theme(legend.position="none")
+#plot(gpF)
+#plot(pF)  
+gridExtra::grid.arrange(gp, p, gpF, pF)
+```
+
+## removed mean = 1, sampled from uniform distribution for missing nodes
+```{r pressure2, echo=FALSE}
+teststats<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionF.txt", header= FALSE, sep = "\t")
+teststats<-as.data.table(t(teststats))[2:ncol(teststats),]
+teststats<-melt(teststats)
+colnames(teststats)<-c("NetworkSize", "Pval")
+
+gp<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)
+p<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)
+
+#+ theme(legend.position="none")
+#plot(gp)
+#plot(p)  
+
+teststatsF<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionF.txt", header= FALSE, sep = "\t")
+teststatsF<-as.data.table(t(teststatsF))[2:ncol(teststatsF),]
+teststatsF<-melt(teststatsF)
+colnames(teststatsF)<-c("NetworkSize", "Pval")
+
+gpF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+pF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+
+#+ theme(legend.position="none")
+#plot(gpF)
+#plot(pF)  
+gridExtra::grid.arrange(gp, p, gpF, pF)
+```
+
+## sampled from uniform distribution for missing nodes
+```{r pressure3, echo=FALSE}
+teststats<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionTall.txt", header= FALSE, sep = "\t")
+teststats<-as.data.table(t(teststats))[2:ncol(teststats),]
+teststats<-melt(teststats)
+colnames(teststats)<-c("NetworkSize", "Pval")
+
+gp<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)
+p<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)
+
+#+ theme(legend.position="none")
+#plot(gp)
+#plot(p)  
+
+teststatsF<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionTall.txt", header= FALSE, sep = "\t")
+teststatsF<-as.data.table(t(teststatsF))[2:ncol(teststatsF),]
+teststatsF<-melt(teststatsF)
+colnames(teststatsF)<-c("NetworkSize", "Pval")
+
+gpF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+pF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+
+#+ theme(legend.position="none")
+#plot(gpF)
+#plot(pF)  
+gridExtra::grid.arrange(gp, p, gpF, pF)
+```
+
+## sampled from uniform distribution for missing nodes
+```{r pressure4, echo=FALSE}
+teststats<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionFall.txt", header= FALSE, sep = "\t")
+teststats<-as.data.table(t(teststats))[2:ncol(teststats),]
+teststats<-melt(teststats)
+colnames(teststats)<-c("NetworkSize", "Pval")
+
+gp<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)
+p<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)
+
+#+ theme(legend.position="none")
+#plot(gp)
+#plot(p)  
+
+teststatsF<-fread("/home/anne/Documents/Master/MA/Testing/out/dist/pdistributionFall.txt", header= FALSE, sep = "\t")
+teststatsF<-as.data.table(t(teststatsF))[2:ncol(teststatsF),]
+teststatsF<-melt(teststatsF)
+colnames(teststatsF)<-c("NetworkSize", "Pval")
+
+gpF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+pF<-ggplot(teststatsF[which(teststatsF$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(adjust = 1/10)+scale_colour_viridis(discrete = T)+ggtitle("includeBackgorund = F")
+
+#+ theme(legend.position="none")
+#plot(gpF)
+#plot(pF)  
+gridExtra::grid.arrange(gp, p, gpF, pF)
+```

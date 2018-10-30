@@ -1,0 +1,103 @@
+---
+title: "Greedy Approach Assesment"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+require(data.table)
+require(ggplot2)
+require(gridExtra)
+require(viridis)
+```
+
+# FDR Threshold
+Threshold has been determined selecting the p-value which includes at most 5% of the random networks for each network size. Random networks are created sampling 1000 networks for each n, p-values are determined using Fisher's method. Some values have been interpolated using a 
+```{r}
+fdr<-fread("~/Masterarbeit/Testing/out_new/1531922997666/thresholds.txt")
+fdr$V1<-1:nrow(fdr)
+ggplot(data=fdr, aes(x = V1, y=V2, color="1000 samples"))+geom_point()+geom_line()+stat_smooth()+ggtitle("FDR Thresholds for each network size")+xlab("Network size")+ylab("FDR threshold")
+```
+
+
+# Comparison with gold standard -- Jaccard distance
+Jaccard_dist(S1, S2) = intersect(S1,S2)/union(S1,S2)
+
+```{r}
+gold<-fread("/home/anne/Documents/Master/MA/data/Kegg_Huntington_Unique.csv")
+
+f1 <-fread("/home/anne/Documents/Master/MA/Testing/out_new/1531922997666/file.graph")
+f1[,.N, by = V1]
+
+
+jaccard<-function(g){
+  sub1<-f1[V1==g,2:4] 
+  sub1<-sub1[order(sub1$V2)]
+  su<-unique(c(sub1$V2, sub1$V4))
+  intersect_1<-length(which(su %in% gold$gene))
+  union_1<-length(unique(c(su, gold$gene)))
+  jaccard<-intersect_1/union_1
+  return(jaccard)
+}
+
+jaccard_dists<-sapply(unique(f1$V1), function(g) jaccard(g))
+jaccard_dists<-as.data.table(jaccard_dists)
+
+ggplot(jaccard_dists, aes(y=jaccard_dists, x="Jaccard distance"))+geom_boxplot()+ggtitle("Jaccard distances to gold standard KEGG pathway for Huntington")+ylab("Jaccard distance")
+```
+
+
+
+
+
+
+```{r}
+pval<-fread("/home/anne/Documents/Master/MA/Testing/out_new/1531922997666/file.stat")
+pval[V2<0.1]
+```
+
+## P-value of pathway with maximal Jaccard similarity:
+```{r}
+pval[which.max(jaccard_dists$jaccard_dists)]
+
+```
+
+# P-value distribution of result networks
+```{r}
+nodes<-fread("/home/anne/Documents/Master/MA/Testing/out_new/1531922997666/file.nodes")
+nodes[, .N, by=V2]
+```
+
+```{r}
+sig<-ggplot(nodes[V2 %in% (pval[V2<0.01]$V1[1:6])], aes(x=V3))+geom_histogram()+facet_wrap("V2")+ggtitle("Histogram of p-values of networks with p-value < 0.05")
+nonsig<-ggplot(nodes[V2 %in% (pval[V2>=0.01]$V1[1:6])], aes(x=V3))+geom_histogram()+facet_wrap("V2")+ggtitle("Histogram of p-values of networks with p>=0.05")
+grid.arrange(sig, nonsig,ncol=1)
+nonsig
+```
+
+# Node distribution
+```{r}
+nn<-fread("/home/anne/Documents/Master/MA/Testing/out_new/1531922997666/nodeDist.txt", header= FALSE, sep = "\t", fill = T)
+nn<-as.data.table(t(nn))[2:ncol(nn),]
+nn<-melt(nn)
+colnames(nn)<-c("NetworkSize", "nodeDegree")
+ggplot(nn[NetworkSize %in% c("V1", "V10", "V40")], aes(x=nodeDegree))+geom_histogram()+facet_wrap("NetworkSize")
+```
+
+
+```{r}
+teststats<-fread("/home/anne/Documents/Master/MA/Testing/out_new/1531922997666/p_sam.txt", header= FALSE, sep = "\t")
+teststats<-as.data.table(t(teststats))[2:ncol(teststats),]
+teststats<-melt(teststats)
+colnames(teststats)<-c("NetworkSize", "Pval")
+
+gp<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40"))], aes(x=Pval, color = NetworkSize))+
+  geom_density(stat = "ecdf")+scale_colour_viridis(discrete = T)
+p<-ggplot(teststats[which(teststats$NetworkSize %in% c("V1", "V10", "V40", "V96"))], aes(x=Pval, color = NetworkSize))+
+  geom_density()+scale_colour_viridis(discrete = T)
+grid.arrange(gp, p)
+#plot(gp)
+```
