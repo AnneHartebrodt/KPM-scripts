@@ -1,6 +1,6 @@
 require(data.table)
 
-pvals<-fread("Masterarbeit/data/DESeq_out/DESeq_out.tsv")
+pvals<-fread("Masterarbeit/differential_out/dataHD/DESEQ/results.tsv")
 #pvals<-fread("/home/anne/Masterarbeit/data/HDarray/processed/pvalue_diff_exp_norm.txt")
 #colnames(pvals)<-c("V1", "pvalue")
 
@@ -19,7 +19,7 @@ require(bvenn)
 network<-"biogrid"
 network.filename<-"Homo_sapiens_biogrid.tsv"
 #network.filename<-"Homo_Sapiens_String.tsv"
-base.dir<-file.path("/home/anne/Masterarbeit/pipeline_easy")
+base.dir<-file.path("/home/anne/Masterarbeit/simplistic/")
 file.location <- file.path(base.dir,"sample_networks", network)
 ## Load data: networks and mapping files
 net <- fread(file.path("~/Masterarbeit/data/networks/", network, network.filename))
@@ -32,7 +32,7 @@ files<-grep("0.", files, invert = T, value = T)
 graphs <- grep(".graph", files, perl = T)
 #graphs <-graphs[as.numeric(gsub(".graph", "", grep(".graph", files, perl = T, value = T)))>15]
 m1<-0.0001
-for(m2 in c(0.4, 0.3, 0.2)){
+for(m2 in c(0.5, 0.4, 0.3, 0.2)){
   print(m2)
 for (ind in 1:5) {
   # randomly sample 3 out of the previously made, non overlapping subnetworks
