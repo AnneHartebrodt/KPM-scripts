@@ -1,0 +1,66 @@
+[2018-11-07 19:53:18.949] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2018-11-07 19:53:18.949] [jointLog] [info] parsing read library format
+[2018-11-07 19:53:18.949] [jointLog] [info] There is 1 library.
+[2018-11-07 19:53:19.052] [jointLog] [info] Loading Quasi index
+[2018-11-07 19:53:19.070] [jointLog] [info] Loading 32-bit quasi index
+[2018-11-07 19:53:48.095] [jointLog] [info] done
+[2018-11-07 19:53:48.095] [jointLog] [info] Index contained 173,531 targets
+[2018-11-07 19:53:49.830] [jointLog] [info] Automatically detected most likely library type as IU
+[2018-11-07 20:01:01.983] [jointLog] [info] Thread saw mini-batch with a maximum of 1.16% zero probability fragments
+[2018-11-07 20:01:02.002] [jointLog] [info] Thread saw mini-batch with a maximum of 0.44% zero probability fragments
+[2018-11-07 20:01:02.009] [jointLog] [info] Thread saw mini-batch with a maximum of 0.46% zero probability fragments
+[2018-11-07 20:01:02.191] [jointLog] [info] Computed 281,207 rich equivalence classes for further processing
+[2018-11-07 20:01:02.191] [jointLog] [info] Counted 54,591,496 total reads in the equivalence classes 
+[2018-11-07 20:01:02.194] [jointLog] [warning] 0.00486716% of fragments were shorter than the k used to build the index (31).
+If this fraction is too large, consider re-building the index with a smaller k.
+The minimum read size found was 1.
+
+
+[2018-11-07 20:01:02.194] [jointLog] [info] Mapping rate = 83.5815%
+
+[2018-11-07 20:01:02.194] [jointLog] [info] finished quantifyLibrary()
+[2018-11-07 20:01:02.200] [jointLog] [info] Starting optimizer
+[2018-11-07 20:01:02.338] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2018-11-07 20:01:02.356] [jointLog] [info] iteration = 0 | max rel diff. = 36.0679
+[2018-11-07 20:01:02.192] [fileLog] [info] 
+At end of round 0
+==================
+Observed 65315259 total fragments (65315259 in most recent round)
+
+[2018-11-07 20:01:02.531] [jointLog] [info] iteration 11, adjusting effective lengths to account for biases
+[2018-11-07 20:01:57.302] [jointLog] [info] Computed expected counts (for bias correction)
+[2018-11-07 20:01:57.302] [jointLog] [info] processed bias for 0.0% of the transcripts
+[2018-11-07 20:02:06.039] [jointLog] [info] processed bias for 10.0% of the transcripts
+[2018-11-07 20:02:14.810] [jointLog] [info] processed bias for 20.0% of the transcripts
+[2018-11-07 20:02:23.670] [jointLog] [info] processed bias for 30.0% of the transcripts
+[2018-11-07 20:02:31.909] [jointLog] [info] processed bias for 40.0% of the transcripts
+[2018-11-07 20:02:38.357] [jointLog] [info] processed bias for 100.0% of the transcripts
+[2018-11-07 20:02:39.938] [jointLog] [info] iteration = 100 | max rel diff. = 9.26724
+[2018-11-07 20:02:41.689] [jointLog] [info] iteration = 200 | max rel diff. = 16.7436
+[2018-11-07 20:02:43.430] [jointLog] [info] iteration = 300 | max rel diff. = 6.74206
+[2018-11-07 20:02:45.168] [jointLog] [info] iteration = 400 | max rel diff. = 15.818
+[2018-11-07 20:02:46.912] [jointLog] [info] iteration = 500 | max rel diff. = 0.736092
+[2018-11-07 20:02:48.660] [jointLog] [info] iteration = 600 | max rel diff. = 4.42273
+[2018-11-07 20:02:50.399] [jointLog] [info] iteration = 700 | max rel diff. = 2.56693
+[2018-11-07 20:02:52.142] [jointLog] [info] iteration = 800 | max rel diff. = 15.4796
+[2018-11-07 20:02:53.884] [jointLog] [info] iteration = 900 | max rel diff. = 0.614493
+[2018-11-07 20:02:55.623] [jointLog] [info] iteration = 1,000 | max rel diff. = 12.6627
+[2018-11-07 20:02:57.362] [jointLog] [info] iteration = 1,100 | max rel diff. = 0.3344
+[2018-11-07 20:02:59.108] [jointLog] [info] iteration = 1,200 | max rel diff. = 0.383934
+[2018-11-07 20:03:00.853] [jointLog] [info] iteration = 1,300 | max rel diff. = 2.96564
+[2018-11-07 20:03:02.602] [jointLog] [info] iteration = 1,400 | max rel diff. = 0.133193
+[2018-11-07 20:03:04.349] [jointLog] [info] iteration = 1,500 | max rel diff. = 0.0358838
+[2018-11-07 20:03:06.095] [jointLog] [info] iteration = 1,600 | max rel diff. = 0.146323
+[2018-11-07 20:03:07.845] [jointLog] [info] iteration = 1,700 | max rel diff. = 0.0683112
+[2018-11-07 20:03:09.591] [jointLog] [info] iteration = 1,800 | max rel diff. = 0.215133
+[2018-11-07 20:03:11.336] [jointLog] [info] iteration = 1,900 | max rel diff. = 0.883237
+[2018-11-07 20:03:13.081] [jointLog] [info] iteration = 2,000 | max rel diff. = 4.34651
+[2018-11-07 20:03:14.829] [jointLog] [info] iteration = 2,100 | max rel diff. = 0.0275842
+[2018-11-07 20:03:15.842] [jointLog] [info] iteration = 2,159 | max rel diff. = 0.00626755
+[2018-11-07 20:03:15.847] [jointLog] [info] Finished optimizer
+[2018-11-07 20:03:15.847] [jointLog] [info] writing output 
+
+[2018-11-07 20:03:16.190] [jointLog] [warning] NOTE: Read Lib [[ out.SRR1747183_1.fastq.gz, out.SRR1747183_2.fastq.gz]] :
+
+Detected a *potential* strand bias > 1% in an unstranded protocol check the file: /home/h/hartebrodt/dataHD/quants/SRR1747183_quant/lib_format_counts.json for details
+

@@ -1,0 +1,11 @@
+{
+    "salmon_version": "0.11.3",
+    "index": "/big/h/hartebrodt/rnaseq/genome/human_index",
+    "libType": "A",
+    "mates1": "out.SRR1747193_1.fastq.gz",
+    "mates2": "out.SRR1747193_2.fastq.gz",
+    "threads": "3",
+    "output": "/home/h/hartebrodt/dataHD/quants/SRR1747193_quant",
+    "gcBias": [],
+    "auxDir": "aux_info"
+}

@@ -1,0 +1,4 @@
+java -jar KPM-4.0.jar -graphFile=/home/anne/Masterarbeit/data/networks/StringDB/Homo_Sapiens_String_ENS900.sif -algo=GREEDY -strategy=INES -K=40
+java -jar KPM-4.0.jar -graphFile=/home/anne/Masterarbeit/data/networks/StringDB/Homo_Sapiens_String_ENS900.sif -algo=GREEDY -strategy=INES -K=10
+java -jar KPM-4.0.jar -graphFile=/home/anne/Masterarbeit/data/networks/StringDB/Homo_Sapiens_String_ENS900.sif -algo=GREEDY -strategy=INES -K=20
+java -jar KPM-4.0.jar -graphFile=/home/anne/Masterarbeit/data/networks/StringDB/Homo_Sapiens_String_ENS900.sif -algo=GREEDY -strategy=INES -K=5

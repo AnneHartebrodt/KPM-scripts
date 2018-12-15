@@ -1,0 +1,7 @@
+GENE EXCEPTIONS: 5
+CASE EXCEPTIONS	MATRIX
+0/home/anne/Masterarbeit/real_data/data/expression_values_bin.txt
+STRATEGY: 	INES
+ALGORITHM: 	GREEDY
+SIZE OF BEST RESULT: 	237
+TOTAL RUNNING TIME: 	87.0

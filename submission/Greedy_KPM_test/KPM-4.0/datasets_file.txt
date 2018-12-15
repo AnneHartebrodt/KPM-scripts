@@ -1,0 +1,2 @@
+ID	L	PATH
+1	0	/home/anne/Masterarbeit/real_data/data/expression_values_bin.txt
