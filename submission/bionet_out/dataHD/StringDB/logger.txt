@@ -1,0 +1,2 @@
+Running time of heinz:	14.9417949279149
+Total run time:	17.188107017676
