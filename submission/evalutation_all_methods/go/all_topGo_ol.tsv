@@ -1,0 +1,24 @@
+GO:term	Description	Bionet	pKPM	DE Genes	KPM k=5	max(p-value)
+GO:0001775	cell activation	1	1	1	1	5.64476755806088e-10
+GO:0002376	immune system process	1	1	1	1	4.78112414660649e-13
+GO:0002521	leukocyte differentiation	1	0	0	1	4.70233970850096e-08
+GO:0007154	cell communication	1	1	1	1	1.46307646284903e-16
+GO:0007165	signal transduction	1	1	1	1	2.29100316895211e-16
+GO:0008219	cell death	1	1	1	1	1.63073701517601e-10
+GO:0008283	cell proliferation	0	1	1	0	1.24681049640314e-07
+GO:0010646	regulation of cell communication	1	1	1	1	7.31018803007313e-09
+GO:0010647	positive regulation of cell communication	0	1	1	0	3.69898179389824e-08
+GO:0023051	regulation of signaling	1	1	1	1	2.22597819513865e-09
+GO:0023052	signaling	1	1	1	1	6.09400030144035e-19
+GO:0023056	positive regulation of signaling	0	1	1	0	1.87631116489402e-08
+GO:0032940	secretion by cell	1	1	1	1	6.87158491360386e-09
+GO:0048518	positive regulation of biological process	1	1	1	1	4.42134751162187e-12
+GO:0048519	negative regulation of biological process	1	0	0	1	8.22375528745451e-08
+GO:0048522	positive regulation of cellular process	1	1	1	1	3.73595509023481e-11
+GO:0048583	regulation of response to stimulus	1	1	1	1	7.50461677819574e-11
+GO:0048584	positive regulation of response to stimulus	0	1	1	0	4.11680047044723e-10
+GO:0050789	regulation of biological process	1	0	0	1	5.09746831751666e-13
+GO:0050794	regulation of cellular process	1	1	1	1	1.11772948748037e-07
+GO:0050896	response to stimulus	1	1	1	1	2.94647780038498e-12
+GO:0051716	cellular response to stimulus	1	1	1	1	2.9808846672969e-13
+GO:0065007	biological regulation	1	1	1	1	1.97877463595725e-08

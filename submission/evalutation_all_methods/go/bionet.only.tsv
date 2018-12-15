@@ -1,0 +1,72 @@
+V1	V2	V3
+GO:0006026	6.63485656869122e-11	aminoglycan catabolic process
+GO:0006022	4.63767664840745e-08	aminoglycan metabolic process
+GO:1901136	5.11011014526785e-07	carbohydrate derivative catabolic process
+GO:0009719	1.42734646600037e-05	response to endogenous stimulus
+GO:0044273	2.76445046161901e-05	sulfur compound catabolic process
+GO:0006027	8.24735709261193e-05	glycosaminoglycan catabolic process
+GO:0030212	0.000457672396400203	hyaluronan metabolic process
+GO:0044237	0.000506399129258848	cellular metabolic process
+GO:0006275	0.000531496785508988	regulation of DNA replication
+GO:0060148	0.000766300790761223	positive regulation of posttranscriptional gene silencing
+GO:0008156	0.000939113557809628	negative regulation of DNA replication
+GO:0046718	0.00115871285819277	viral entry into host cell
+GO:0051222	0.00118904466043165	positive regulation of protein transport
+GO:2000484	0.00132076167667055	positive regulation of interleukin-8 secretion
+GO:2000104	0.00133857142095325	negative regulation of DNA-dependent DNA replication
+GO:0044272	0.00137850828867403	sulfur compound biosynthetic process
+GO:0051172	0.00142166153598876	negative regulation of nitrogen compound metabolic process
+GO:0010033	0.00157112163377141	response to organic substance
+GO:1902893	0.0016638822112122	regulation of pri-miRNA transcription by RNA polymerase II
+GO:0048585	0.00177293102161613	negative regulation of response to stimulus
+GO:1900046	0.00192589139410431	regulation of hemostasis
+GO:0006915	0.00194588638445285	apoptotic process
+GO:0070201	0.00233577578007202	regulation of establishment of protein localization
+GO:0023014	0.00244076969887459	signal transduction by protein phosphorylation
+GO:0003170	0.00263795576794021	heart valve development
+GO:2000112	0.00270676314223914	regulation of cellular macromolecule biosynthetic process
+GO:0038093	0.00307210613986438	Fc receptor signaling pathway
+GO:0061614	0.00322166154763673	pri-miRNA transcription by RNA polymerase II
+GO:0104004	0.00324138368526583	cellular response to environmental stimulus
+GO:0042554	0.00324154819160368	superoxide anion generation
+GO:0006939	0.00354443326864804	smooth muscle contraction
+GO:0006790	0.00356429600231623	sulfur compound metabolic process
+GO:1901700	0.00362735857157878	response to oxygen-containing compound
+GO:0090399	0.00371792281268943	replicative senescence
+GO:0007049	0.00380595911898415	cell cycle
+GO:0051223	0.00396571128832656	regulation of protein transport
+GO:0030214	0.00408356396025477	hyaluronan catabolic process
+GO:0010605	0.00437513133540848	negative regulation of macromolecule metabolic process
+GO:0010332	0.00452730789809441	response to gamma radiation
+GO:0002576	0.00474232960818973	platelet degranulation
+GO:0001819	0.00485508845615368	positive regulation of cytokine production
+GO:0023057	0.0049669736619653	negative regulation of signaling
+GO:0000278	0.00500763222580269	mitotic cell cycle
+GO:0006112	0.00516762919072977	energy reserve metabolic process
+GO:0048017	0.0058525769365452	inositol lipid-mediated signaling
+GO:0006082	0.00586222008943753	organic acid metabolic process
+GO:0052547	0.00606868693231748	regulation of peptidase activity
+GO:0006903	0.0062719572323274	vesicle targeting
+GO:1905953	0.0063798204757488	negative regulation of lipid localization
+GO:0032964	0.00654298120273996	collagen biosynthetic process
+GO:0031663	0.00669122132388216	lipopolysaccharide-mediated signaling pathway
+GO:0043112	0.00686254283894518	receptor metabolic process
+GO:0050878	0.00720283014404535	regulation of body fluid levels
+GO:0001817	0.00722423232205244	regulation of cytokine production
+GO:0010648	0.00723520347401646	negative regulation of cell communication
+GO:2001235	0.00724847495523008	positive regulation of apoptotic signaling pathway
+GO:0050663	0.00727542231993968	cytokine secretion
+GO:0006575	0.00736855638356434	cellular modified amino acid metabolic process
+GO:0045217	0.00738883484153889	cell-cell junction maintenance
+GO:0009611	0.00755083578522664	response to wounding
+GO:0030166	0.00763310125033911	proteoglycan biosynthetic process
+GO:0033619	0.00810769917314292	membrane protein proteolysis
+GO:0090087	0.00812389116216365	regulation of peptide transport
+GO:0032496	0.00818189437278326	response to lipopolysaccharide
+GO:0071310	0.00844238196348807	cellular response to organic substance
+GO:0007205	0.00874972584349738	protein kinase C-activating G protein-coupled receptor signaling pathway
+GO:0034331	0.0091087624757146	cell junction maintenance
+GO:0045934	0.00938889813635384	negative regulation of nucleobase-containing compound metabolic process
+GO:0042094	0.00981792016501511	interleukin-2 biosynthetic process
+GO:0042035	0.0098549428149201	regulation of cytokine biosynthetic process
+GO:0010743	0.00991584001275469	regulation of macrophage derived foam cell differentiation

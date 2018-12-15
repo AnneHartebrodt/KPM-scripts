@@ -1,0 +1,31 @@
+V1	V2	V3
+GO:0043170	0.000121027689985909	macromolecule metabolic process
+GO:0006914	0.00082639394559159	autophagy
+GO:0001932	0.00145524139608559	regulation of protein phosphorylation
+GO:0043620	0.00150333877716316	regulation of DNA-templated transcription in response to stress
+GO:0051900	0.00172647141818222	regulation of mitochondrial depolarization
+GO:0003254	0.00191791509831311	regulation of membrane depolarization
+GO:0061919	0.00194770161491298	process utilizing autophagic mechanism
+GO:0032760	0.00224785257783823	positive regulation of tumor necrosis factor production
+GO:1903557	0.00342996542755514	positive regulation of tumor necrosis factor superfamily cytokine production
+GO:0006457	0.00357769406083065	protein folding
+GO:0044260	0.00381481778235269	cellular macromolecule metabolic process
+GO:0051094	0.0039202825089337	positive regulation of developmental process
+GO:0036336	0.00396095728776274	dendritic cell migration
+GO:0072507	0.00407836110086435	divalent inorganic cation homeostasis
+GO:0044271	0.00416860131192316	cellular nitrogen compound biosynthetic process
+GO:0035265	0.00565654561270502	organ growth
+GO:0042278	0.0058524207557905	purine nucleoside metabolic process
+GO:0019218	0.00601081773025568	regulation of steroid metabolic process
+GO:0031145	0.0066184108363267	anaphase-promoting complex-dependent catabolic process
+GO:0010821	0.00671316135359208	regulation of mitochondrion organization
+GO:0006636	0.00681568381787636	unsaturated fatty acid biosynthetic process
+GO:0042325	0.00709156373265559	regulation of phosphorylation
+GO:0046902	0.00724687906043209	regulation of mitochondrial membrane permeability
+GO:0097300	0.00731079213444864	programmed necrotic cell death
+GO:0032459	0.00844740477041752	regulation of protein oligomerization
+GO:0046890	0.00880061643117219	regulation of lipid biosynthetic process
+GO:0045926	0.0089410652302575	negative regulation of growth
+GO:1902930	0.0091366799832336	regulation of alcohol biosynthetic process
+GO:0051338	0.00957565695746703	regulation of transferase activity
+GO:0015833	0.00988469676647031	peptide transport

@@ -1,0 +1,5 @@
+method	size	neighbourhood	containsHTT	neighbourHTT
+pKPM	139	2634	FALSE	FALSE
+pKPM (union)	300	4597	FALSE	FALSE
+Bionet	358	4930	FALSE	TRUE
+classical KPM	236	4367	FALSE	TRUE

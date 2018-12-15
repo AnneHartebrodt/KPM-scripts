@@ -1,0 +1,113 @@
+V1	V2	V3
+GO:0006026	6.63485656869122e-11	aminoglycan catabolic process
+GO:0006022	4.63767664840745e-08	aminoglycan metabolic process
+GO:1901136	5.11011014526785e-07	carbohydrate derivative catabolic process
+GO:0030099	3.5734090483213e-06	myeloid cell differentiation
+GO:0071402	5.79947223273142e-06	cellular response to lipoprotein particle stimulus
+GO:0019222	9.04228274810063e-06	regulation of metabolic process
+GO:0009719	1.42734646600037e-05	response to endogenous stimulus
+GO:0044273	2.76445046161901e-05	sulfur compound catabolic process
+GO:0055094	3.98512823579178e-05	response to lipoprotein particle
+GO:0009892	4.7651379748086e-05	negative regulation of metabolic process
+GO:0050900	5.46407431342693e-05	leukocyte migration
+GO:0048771	8.10908783963252e-05	tissue remodeling
+GO:0006027	8.24735709261193e-05	glycosaminoglycan catabolic process
+GO:1903706	0.000216330587736067	regulation of hemopoiesis
+GO:2000637	0.000298318592596607	positive regulation of gene silencing by miRNA
+GO:0031324	0.000343084354328021	negative regulation of cellular metabolic process
+GO:0030212	0.000457672396400203	hyaluronan metabolic process
+GO:0044237	0.000506399129258848	cellular metabolic process
+GO:1904951	0.000526266772077316	positive regulation of establishment of protein localization
+GO:0006275	0.000531496785508988	regulation of DNA replication
+GO:0050817	0.000546508442784331	coagulation
+GO:0002573	0.000662754718772521	myeloid leukocyte differentiation
+GO:0002886	0.000761301158204279	regulation of myeloid leukocyte mediated immunity
+GO:0060148	0.000766300790761223	positive regulation of posttranscriptional gene silencing
+GO:0008156	0.000939113557809628	negative regulation of DNA replication
+GO:0046718	0.00115871285819277	viral entry into host cell
+GO:0051222	0.00118904466043165	positive regulation of protein transport
+GO:0070920	0.00121540859611751	regulation of production of small RNA involved in gene silencing by RNA
+GO:2000484	0.00132076167667055	positive regulation of interleukin-8 secretion
+GO:0016049	0.00133608495188531	cell growth
+GO:2000104	0.00133857142095325	negative regulation of DNA-dependent DNA replication
+GO:0044272	0.00137850828867403	sulfur compound biosynthetic process
+GO:0051172	0.00142166153598876	negative regulation of nitrogen compound metabolic process
+GO:0019538	0.00145069841680586	protein metabolic process
+GO:0097193	0.00156512607756721	intrinsic apoptotic signaling pathway
+GO:0010033	0.00157112163377141	response to organic substance
+GO:0016043	0.00165944376021977	cellular component organization
+GO:1902893	0.0016638822112122	regulation of pri-miRNA transcription by RNA polymerase II
+GO:0002888	0.00168642301634035	positive regulation of myeloid leukocyte mediated immunity
+GO:0060255	0.00169128192194804	regulation of macromolecule metabolic process
+GO:0048585	0.00177293102161613	negative regulation of response to stimulus
+GO:1900046	0.00192589139410431	regulation of hemostasis
+GO:0006915	0.00194588638445285	apoptotic process
+GO:0016310	0.00199170217950561	phosphorylation
+GO:0042108	0.002126757034621	positive regulation of cytokine biosynthetic process
+GO:0070201	0.00233577578007202	regulation of establishment of protein localization
+GO:0023014	0.00244076969887459	signal transduction by protein phosphorylation
+GO:0032388	0.00256609239103297	positive regulation of intracellular transport
+GO:0003170	0.00263795576794021	heart valve development
+GO:0072593	0.00266014873871692	reactive oxygen species metabolic process
+GO:2000112	0.00270676314223914	regulation of cellular macromolecule biosynthetic process
+GO:2000379	0.00273544669666304	positive regulation of reactive oxygen species metabolic process
+GO:0042107	0.00278708030096243	cytokine metabolic process
+GO:0038093	0.00307210613986438	Fc receptor signaling pathway
+GO:1990440	0.00311834466142362	positive regulation of transcription from RNA polymerase II promoter in response to endoplasmic reticulum stress
+GO:0042088	0.003133228334744	T-helper 1 type immune response
+GO:0009653	0.00320149014756647	anatomical structure morphogenesis
+GO:0061614	0.00322166154763673	pri-miRNA transcription by RNA polymerase II
+GO:0104004	0.00324138368526583	cellular response to environmental stimulus
+GO:0042554	0.00324154819160368	superoxide anion generation
+GO:1903798	0.00329312730177907	regulation of production of miRNAs involved in gene silencing by miRNA
+GO:0042089	0.00338973458851353	cytokine biosynthetic process
+GO:0006939	0.00354443326864804	smooth muscle contraction
+GO:0006790	0.00356429600231623	sulfur compound metabolic process
+GO:0018126	0.00358195624265988	protein hydroxylation
+GO:1901700	0.00362735857157878	response to oxygen-containing compound
+GO:0090399	0.00371792281268943	replicative senescence
+GO:0007049	0.00380595911898415	cell cycle
+GO:0051223	0.00396571128832656	regulation of protein transport
+GO:0030214	0.00408356396025477	hyaluronan catabolic process
+GO:0010605	0.00437513133540848	negative regulation of macromolecule metabolic process
+GO:0010332	0.00452730789809441	response to gamma radiation
+GO:1901564	0.0046874295135871	organonitrogen compound metabolic process
+GO:0002576	0.00474232960818973	platelet degranulation
+GO:0001819	0.00485508845615368	positive regulation of cytokine production
+GO:0023057	0.0049669736619653	negative regulation of signaling
+GO:0000278	0.00500763222580269	mitotic cell cycle
+GO:0006112	0.00516762919072977	energy reserve metabolic process
+GO:0051882	0.0055399383521317	mitochondrial depolarization
+GO:0048017	0.0058525769365452	inositol lipid-mediated signaling
+GO:0006082	0.00586222008943753	organic acid metabolic process
+GO:0052547	0.00606868693231748	regulation of peptidase activity
+GO:1905475	0.00615159184466703	regulation of protein localization to membrane
+GO:0006903	0.0062719572323274	vesicle targeting
+GO:1905953	0.0063798204757488	negative regulation of lipid localization
+GO:0032964	0.00654298120273996	collagen biosynthetic process
+GO:0031663	0.00669122132388216	lipopolysaccharide-mediated signaling pathway
+GO:0043112	0.00686254283894518	receptor metabolic process
+GO:0032461	0.00705934568584459	positive regulation of protein oligomerization
+GO:0050878	0.00720283014404535	regulation of body fluid levels
+GO:0001817	0.00722423232205244	regulation of cytokine production
+GO:0010648	0.00723520347401646	negative regulation of cell communication
+GO:2001235	0.00724847495523008	positive regulation of apoptotic signaling pathway
+GO:0050663	0.00727542231993968	cytokine secretion
+GO:0006575	0.00736855638356434	cellular modified amino acid metabolic process
+GO:0045217	0.00738883484153889	cell-cell junction maintenance
+GO:0061323	0.00750116324722818	cell proliferation involved in heart morphogenesis
+GO:0009611	0.00755083578522664	response to wounding
+GO:0030166	0.00763310125033911	proteoglycan biosynthetic process
+GO:2000377	0.00783617420816614	regulation of reactive oxygen species metabolic process
+GO:0033619	0.00810769917314292	membrane protein proteolysis
+GO:0090087	0.00812389116216365	regulation of peptide transport
+GO:0032496	0.00818189437278326	response to lipopolysaccharide
+GO:0071310	0.00844238196348807	cellular response to organic substance
+GO:0007205	0.00874972584349738	protein kinase C-activating G protein-coupled receptor signaling pathway
+GO:2001242	0.00875277934434109	regulation of intrinsic apoptotic signaling pathway
+GO:0034331	0.0091087624757146	cell junction maintenance
+GO:0022402	0.00914606854020173	cell cycle process
+GO:0045934	0.00938889813635384	negative regulation of nucleobase-containing compound metabolic process
+GO:0042094	0.00981792016501511	interleukin-2 biosynthetic process
+GO:0042035	0.0098549428149201	regulation of cytokine biosynthetic process
+GO:0010743	0.00991584001275469	regulation of macrophage derived foam cell differentiation
