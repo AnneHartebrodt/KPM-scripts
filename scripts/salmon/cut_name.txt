@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for fn in $(ls);
-do
-echo $fn
-sed -i -E 's/\.[0-9]\t/\t /g' $fn/quant.sf 
-done
